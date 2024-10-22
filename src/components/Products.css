@@ -1,0 +1,109 @@
+.img-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-logo img {
+    object-fit: contain;
+    width: 300%;
+    max-height: 650px;
+    background-color: whitesmoke;
+  }
+  
+  @media(min-width:386px){
+    .img-logo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .img-logo img {
+      object-fit: contain;
+      width: 300%;
+      max-height: 650px;
+      background-color: whitesmoke;
+    }
+  }
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px; 
+  margin: 50px auto; 
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Carousel indicators */
+.carousel-indicators button {
+  background-color: #fff;
+  border: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background-color: #007bff; 
+}
+
+.carousel-indicators button:hover {
+  background-color: #007bff; 
+}
+
+/* Carousel inner styling */
+.carousel-inner img {
+  width: 100%;
+  height: 500px; 
+  object-fit: cover; 
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner .carousel-item {
+  transition: opacity 0.5s ease;
+}
+
+/* Add a fading effect */
+.carousel-item {
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Carousel control buttons (prev/next) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Position the buttons and give them spacing */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5%;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.visually-hidden {
+  display: none;
+}
