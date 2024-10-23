@@ -10,7 +10,7 @@
     background-color: whitesmoke;
   }
   
-  @media(min-width:386px){
+  @media(max-width:786px){
     .img-logo{
       display: flex;
       justify-content: center;
@@ -21,6 +21,9 @@
       width: 300%;
       max-height: 650px;
       background-color: whitesmoke;
+    }
+    .product-hero{
+      display: none;
     }
   }
 
@@ -64,7 +67,6 @@
   transition: opacity 0.5s ease;
 }
 
-/* Add a fading effect */
 .carousel-item {
   opacity: 0;
 }
@@ -73,7 +75,6 @@
   opacity: 1;
 }
 
-/* Carousel control buttons (prev/next) */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.5);
@@ -88,7 +89,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Position the buttons and give them spacing */
 .carousel-control-prev,
 .carousel-control-next {
   top: 50%;
