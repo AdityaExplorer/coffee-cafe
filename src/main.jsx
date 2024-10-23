@@ -5,6 +5,7 @@ import App from './App.jsx'
 import './index.css'
 import Products from './components/Products.jsx';
 import Equipments from './components/Equipments.jsx';
+import Blog from './components/Blog.jsx';
 
 
 
@@ -13,6 +14,7 @@ const router=createBrowserRouter([
     children:[
       {path:'products',element:<Products/>},
       {path:'equipments',element:<Equipments/>},
+      {path:'blog',element:<Blog/>}
 
     ]}
 
