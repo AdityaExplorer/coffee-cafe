@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
+
+
   return (
+    
     <>
       <nav
         className="navbar navbar-expand-md  sticky-top border-bottom navbar"
@@ -18,9 +21,9 @@ const Navbar = () => {
         <div className="container">
           <a className="navbar-brand d-md-none" href="#">
             {/* <svg className="bi" width="24" height="24"><use xlinkHref="#aperture"/></svg> */}
-            {/* <div className="logo">
+            <div className="logo">
             <img src={logo_img} alt="" />
-      </div> */}
+      </div>
           </a>
           <button
             className="navbar-toggler"
@@ -61,7 +64,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link " to="/">
+                  <Link className="nav-link " to="/" >
                     Home
                   </Link>
                 </li>

@@ -22,7 +22,7 @@
     top: 0.2rem;
     margin-left: 3rem;
 }
-@media(min-width:300px){
+@media(max-width:780px){
     .logo img{
         height: 70px;
         width: 70px;
@@ -31,6 +31,9 @@
         position: absolute;
         top: 0.8rem;
         margin-left: 1rem;
+    }
+    #offcanvas {
+      width: 50%; 
     }
 }
 
