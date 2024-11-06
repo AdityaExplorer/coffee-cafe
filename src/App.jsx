@@ -7,35 +7,48 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Products from "./components/Products";
 import {Outlet, useLocation} from 'react-router-dom';
+import { useEffect, useState } from "react";
+import LoadingSpinner from "./components/LoadingSippner";
 
 function App() {
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
+
+  const[loader,setLoader]=useState(true);
 
   // Check if the current route is `/products`
   const isHomePage = location.pathname === '/';
   // const isProductsPage = location.pathname === '/products';
   // const isEquipmentPage=location.pathname ==='./equipments';
 
+  useEffect(()=>{
+    const timer=setTimeout(()=>{
+      setLoader(false);
+    },2000)
+    return ()=>clearTimeout(timer);
+  },[])
+
   return (
     <>
-      <div>
-        <Navbar ></Navbar>
-        <Outlet></Outlet>
-     
-      {isHomePage && (
-        <>
-          <Hero /> {/* Only visible on Home page */}
-          <Customers dataCustomers={dataCustomers} /> {/* Only visible on Home page */}
-        </>
+      {loader ? (
+        <LoadingSpinner></LoadingSpinner>
+      ) : (
+        <div>
+          <Navbar />
+          <Outlet />
+
+          {isHomePage && (
+            <>
+              <Hero /> 
+              <Customers dataCustomers={dataCustomers} /> 
+            </>
+          )}
+
+          <Footer />
+        </div>
       )}
-      
-     
-      
-        <Footer />
-      </div>
     </>
   );
-};
+}
 
 
 const dataCustomers = [
