@@ -2,14 +2,16 @@ import "./Navbar.css";
 import logo_img from "../images/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-
+import { useState } from "react";
+import Popup from "./Popup.jsx";
 
 const Navbar = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
 
   return (
-    
     <>
       <nav
         className="navbar navbar-expand-md  sticky-top border-bottom navbar"
@@ -22,8 +24,8 @@ const Navbar = () => {
           <a className="navbar-brand d-md-none" href="#">
             {/* <svg className="bi" width="24" height="24"><use xlinkHref="#aperture"/></svg> */}
             <div className="logo">
-            <img src={logo_img} alt="" />
-      </div>
+              <img src={logo_img} alt="" />
+            </div>
           </a>
           <button
             className="navbar-toggler"
@@ -64,22 +66,22 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link " to="/" >
+                  <Link className="nav-link " to="/">
                     Home
                   </Link>
                 </li>
-                <li className="nav-item" >
-                <Link className="nav-link " to="/products">
+                <li className="nav-item">
+                  <Link className="nav-link " to="/products">
                     Product
                   </Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link " to="/equipments">
+                  <Link className="nav-link " to="/equipments">
                     Equipments
                   </Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link " to="/blog">
+                  <Link className="nav-link " to="/blog">
                     Blog
                   </Link>
                 </li>
@@ -90,7 +92,24 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Contact Us
+                    <button onClick={openPopup} className="Contact_Us">Contact Us</button>
+                    {/* Render the Popup component */}
+                    <Popup isOpen={isPopupOpen} onClose={closePopup}>
+                      <h2>Contact Us</h2>
+                      <p className="pop_content">BREWLINE</p>
+                      <p className="pop_content">Email:brewline0000@gmail.com</p>
+                      <p className="pop_content">Mobile:039309203</p>
+                      <h4>Got a message for us? Send it here!</h4>
+                      <input type="email" placeholder="Enter your email" className="in_text"/>
+                      <textarea name="" id="" placeholder="Enter your message"
+                      spellCheck="True"
+                      className="in_text"></textarea>
+                      <div className="consent">
+                      <label htmlFor="">I agree the terms and pirvacy policy</label>
+                      <input type="checkbox" required />
+                      </div>
+                      <button className="pop_btn">Send</button>
+                    </Popup>
                   </a>
                 </li>
                 <li className="nav-item">
@@ -106,9 +125,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      
-
-      
     </>
   );
 };

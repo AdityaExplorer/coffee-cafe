@@ -27,6 +27,9 @@ function App() {
     return ()=>clearTimeout(timer);
   },[])
 
+
+  
+
   return (
     <>
       {loader ? (
