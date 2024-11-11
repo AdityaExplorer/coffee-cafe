@@ -15,21 +15,18 @@ function App() {
 
   const[loader,setLoader]=useState(true);
 
-  // Check if the current route is `/products`
   const isHomePage = location.pathname === '/';
-  // const isProductsPage = location.pathname === '/products';
-  // const isEquipmentPage=location.pathname ==='./equipments';
+ 
 
   useEffect(()=>{
     const timer=setTimeout(()=>{
       setLoader(false);
-    },2000)
+    },1000)
     return ()=>clearTimeout(timer);
   },[])
 
-
   
-
+  
   return (
     <>
       {loader ? (

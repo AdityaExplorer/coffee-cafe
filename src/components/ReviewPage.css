@@ -1,0 +1,109 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inside-data{
+    height: 400px;
+    width: 800px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 4px 6px rgba(139, 69, 19, 0.3);
+}
+.inside-data h1{
+    color: #80461B;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+h1:hover{
+    transform: translateY(-5.5px);
+}
+/* Wrapper styling for centering and layout */
+.form-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Inner form styling */
+.form-inside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Input and textarea styling */
+.form-inside input[type="text"],
+.form-inside textarea {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-inside input[type="text"]:focus,
+.form-inside textarea:focus {
+    border-color: #a67c52; /* A soft brown color to suit the café theme */
+    box-shadow: 0px 0px 5px rgba(166, 124, 82, 0.5);
+}
+
+/* Textarea specific styling */
+.form-inside textarea {
+    resize: vertical; /* Allows vertical resizing but prevents horizontal resizing */
+    min-height: 100px;
+}
+
+/* Button styling */
+.form-inside button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #a67c52; /* Soft brown color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-inside button:hover {
+    background-color: #8b5e34; /* Darker brown for hover effect */
+}
+
+/* Adding subtle transition effect for inputs and button */
+.form-inside input[type="text"],
+.form-inside textarea,
+.form-inside button {
+    transition: all 0.3s ease;
+}
+.btnn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+}
+@media(max-width:786px){
+    .inside-data{
+        display: none;
+    }
+}

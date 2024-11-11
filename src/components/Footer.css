@@ -2,88 +2,28 @@
 .footer {
     background-color: rgba(187, 161, 161, 0.13); 
     height: auto; 
-    padding: 40px 0; 
     display: flex;
     justify-content: center; 
     align-items: center; 
+    height: 30px;
   }
-  
-  /* Container for the form */
-  .container-footer {
-    width: 80%; 
-    max-width: 500px;
-    padding: 20px;
-    background-color: #fff; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    text-align: center;
-  }
-  
-  /* Form heading */
-  .container-footer h5 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  /* Form description text */
-  .container-footer p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  /* Input field styling */
-  .container-footer .form-control {
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 15px; 
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  /* Button styling */
-  .container-footer .btn {
-    width: 60%; 
-    padding: 5px;
-    background-color: #E3BC9A;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .container-footer .btn:hover {
-    background-color: #eab98e;
-  }
-  
+
+.inside-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inside-footer p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: #80461B;
+  letter-spacing: 3px;
+}
   @media (max-width: 768px) {
     .footer {
       padding: 20px; 
     }
-  
-    .container-footer {
-      width: 90%;
-      max-width: none;
-      margin: 0 auto; 
-      padding: 15px; 
-    }
-  
-    .container-footer h5 {
-      font-size: 1.1rem; 
-    }
-  
-    .container-footer p {
-      font-size: 0.9rem; 
-    }
-  
-    .container-footer .form-control {
-      margin-bottom: 10px; 
-    }
-  
-    .container-footer .btn {
-      width: 100%; 
-    }
   }
-  

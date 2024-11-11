@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Popup from "./Popup.jsx";
+import { CgDarkMode } from "react-icons/cg";
 
 const Navbar = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -87,26 +88,45 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Menu
+                    <CgDarkMode />
                   </a>
                 </li>
                 <li className="nav-item">
+                <Link className="nav-link " to="/review">
+                    Review
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <a className="nav-link" href="#">
-                    <button onClick={openPopup} className="Contact_Us">Contact Us</button>
+                    <button onClick={openPopup} className="Contact_Us">
+                      Contact Us
+                    </button>
                     {/* Render the Popup component */}
                     <Popup isOpen={isPopupOpen} onClose={closePopup}>
                       <h2>Contact Us</h2>
                       <p className="pop_content">BREWLINE</p>
-                      <p className="pop_content">Email:brewline0000@gmail.com</p>
+                      <p className="pop_content">
+                        Email:brewline0000@gmail.com
+                      </p>
                       <p className="pop_content">Mobile:039309203</p>
                       <h4>Got a message for us? Send it here!</h4>
-                      <input type="email" placeholder="Enter your email" className="in_text"/>
-                      <textarea name="" id="" placeholder="Enter your message"
-                      spellCheck="True"
-                      className="in_text"></textarea>
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="in_text"
+                      />
+                      <textarea
+                        name=""
+                        id=""
+                        placeholder="Enter your message"
+                        spellCheck="True"
+                        className="in_text"
+                      ></textarea>
                       <div className="consent">
-                      <label htmlFor="">I agree the terms and pirvacy policy</label>
-                      <input type="checkbox" required />
+                        <label htmlFor="">
+                          I agree the terms and pirvacy policy
+                        </label>
+                        <input type="checkbox" required />
                       </div>
                       <button className="pop_btn">Send</button>
                     </Popup>
@@ -115,8 +135,9 @@ const Navbar = () => {
                 <li className="nav-item">
                   <a className="nav-link" href="#">
                     <svg className="bi" width="24" height="24">
-                      {/* <use xlinkHref="#cart" /> */}
-                      <FaShoppingCart></FaShoppingCart>
+                      <Link className="nav-link " to="/cart">
+                        <FaShoppingCart></FaShoppingCart>
+                      </Link>
                     </svg>
                   </a>
                 </li>

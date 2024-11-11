@@ -6,6 +6,9 @@ import './index.css'
 import Products from './components/Products.jsx';
 import Equipments from './components/Equipments.jsx';
 import Blog from './components/Blog.jsx';
+import Cart from './components/Cart.jsx';
+import { CartProvider } from './store/CartContext';
+import ReviewPage from './components/ReviewPage.jsx';
 
 
 
@@ -14,14 +17,16 @@ const router=createBrowserRouter([
     children:[
       {path:'products',element:<Products/>},
       {path:'equipments',element:<Equipments/>},
-      {path:'blog',element:<Blog/>}
+      {path:'blog',element:<Blog/>},
+      {path:'cart',element:<Cart/>},
+      {path:'review',element:<ReviewPage/>}
 
     ]}
 
   ])
 createRoot(document.getElementById('root')).render(
 
-  <StrictMode>
+    <CartProvider>
     <RouterProvider router={router}/>
-  </StrictMode>,
+    </CartProvider>
 )
