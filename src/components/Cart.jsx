@@ -6,13 +6,12 @@ import './Cart.css';
 import { CiCirclePlus,CiCircleMinus } from "react-icons/ci";
 
 const Cart = () => {
-  const { cartItems,removeFromCart } = useCart();
+  const { cartItems, removeFromCart, incrementQuantity, decrementQuantity, getTotal } = useCart();
   
   const[total,setTotal]=useState(0)
   useEffect(() => {
-    const newTotal = cartItems.reduce((sum, item) => sum + (parseFloat(item.price) || 0), 0); // Ensure item.price is a valid number
-    setTotal(newTotal);
-  }, [cartItems]);
+    setTotal(getTotal());
+  }, [cartItems, getTotal]);
   
   return (
     <>
@@ -29,10 +28,19 @@ const Cart = () => {
           <img src={item.image} alt={item.title} />
           <h2>{item.title}</h2>
           <p>Price: ₹{item.price}</p>
-          <button onClick={() => removeFromCart(index)}><MdDelete /></button>
-          <button onClick={()=>increment(item.price)}><CiCirclePlus /></button>
-          <p className='inital_quantity'>0</p>
-          <button><CiCircleMinus /></button>
+           {/* Remove item button */}
+           <button onClick={() => removeFromCart(index)}>
+                <MdDelete />
+              </button>
+
+              {/* Increment and decrement quantity buttons */}
+              <button onClick={() => incrementQuantity(index)}>
+                <CiCirclePlus />
+              </button>
+              <p className='initial_quantity'>{item.quantity}</p>
+              <button onClick={() => decrementQuantity(index)}>
+                <CiCircleMinus />
+              </button>
         </div>
       ))}
     </div>
