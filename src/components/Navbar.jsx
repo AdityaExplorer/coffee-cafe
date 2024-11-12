@@ -111,6 +111,11 @@ const Navbar = () => {
                       <p className="pop_content">Mobile:039309203</p>
                       <h4>Got a message for us? Send it here!</h4>
                       <input
+                        type="name"
+                        placeholder="Enter your name"
+                        className="in_text"
+                      />
+                      <input
                         type="email"
                         placeholder="Enter your email"
                         className="in_text"

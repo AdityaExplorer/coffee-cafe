@@ -1,7 +1,18 @@
 import './Equipments.css';
 import { FaCartPlus } from "react-icons/fa";
+import { useCart } from '../store/CartContext';
+import { useNavigate } from 'react-router-dom';
+
+
 const Equipments = () => {
 
+  const { add_to_cart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAddToCart = (equipData) => {
+    add_to_cart(equipData);
+    navigate('/cart');
+  };
   return (
     
     <>
@@ -24,9 +35,9 @@ const Equipments = () => {
             <div key={index} className="product-card">
               <img src={brew.image} alt={brew.title} />
               <h2 className="product_title">{brew.title}</h2>
-              <h2 className="product_Price">{brew.price}</h2>
+              <h2 className="product_Price">₹{brew.price}</h2>
               <button className="cart-btn">
-              <FaCartPlus />
+              <FaCartPlus onClick={()=>handleAddToCart(brew)} />
               </button>
             </div>
           ))

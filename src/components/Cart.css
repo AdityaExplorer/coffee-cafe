@@ -1,0 +1,139 @@
+/* Container for Cart */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Cart Title */
+.cart-container h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Message when cart is empty */
+.cart-container p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Cart Items */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    cursor:pointer;
+}
+
+.cart-item img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 8px;
+    
+}
+
+.cart-item h2 {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    color: #444;
+    margin: 0;
+}
+
+.cart-item p {
+    font-size: 1rem;
+    color: #888;
+}
+
+.cart-item button {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.cart-item button:hover {
+    color: #cc0000;
+}
+
+/* Total Price Section */
+.total {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.total h2 {
+    color: #333;
+}
+
+.total .offer {
+    margin-top: 10px;
+}
+
+.total select {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-item img {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .cart-item h2 {
+        font-size: 1rem;
+    }
+
+    .cart-item p {
+        font-size: 0.9rem;
+    }
+
+    .total h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .cart-item h2 {
+        font-size: 0.9rem;
+    }
+
+    .cart-item p {
+        font-size: 0.8rem;
+    }
+
+    .total h2 {
+        font-size: 1.2rem;
+    }
+
+    .total select {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
