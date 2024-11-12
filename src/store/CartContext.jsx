@@ -7,7 +7,7 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-
+  const [offer, setOffer] = useState('');
   const add_to_cart = (product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
@@ -51,23 +51,41 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+
+  const applyOffer = (total) => {
+    switch (offer) {
+      case 'NEW':
+        return total * 0.90;  // Apply 10% discount for 'NEW' offer
+      case 'Min. order above 3000':
+        return total >= 3000 ? total * 0.80 : total;  // Apply 20% discount if total > 3000
+      default:
+        return total;
+    }
+  };
   // Calculate the total price
   const getTotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+    let total = cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
       0
     );
+    return applyOffer(total);  // Apply the selected offer to the total
+  };
+
+  // Handle offer change
+  const handleOfferChange = (newOffer) => {
+    setOffer(newOffer);
   };
 
 
-
   return (
-    <CartContext.Provider value={{ cartItems,
+    <CartContext.Provider value={{  cartItems,
       add_to_cart,
       removeFromCart,
       incrementQuantity,
       decrementQuantity,
-      getTotal,}}>
+      getTotal,
+      handleOfferChange, 
+      offer,  }}>
       {children}
     </CartContext.Provider>
   );

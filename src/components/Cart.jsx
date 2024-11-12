@@ -6,12 +6,19 @@ import './Cart.css';
 import { CiCirclePlus,CiCircleMinus } from "react-icons/ci";
 
 const Cart = () => {
-  const { cartItems, removeFromCart, incrementQuantity, decrementQuantity, getTotal } = useCart();
+  const {  cartItems,
+    removeFromCart,
+    incrementQuantity,
+    decrementQuantity,
+    getTotal,
+    handleOfferChange,
+    offer, } = useCart();
   
   const[total,setTotal]=useState(0)
   useEffect(() => {
     setTotal(getTotal());
-  }, [cartItems, getTotal]);
+  }, [cartItems, offer, getTotal]);
+
   
   return (
     <>
@@ -46,15 +53,22 @@ const Cart = () => {
     </div>
   )}
   <div className="total">
-    <h2>Total Price: ₹{Number(total).toFixed(2)}</h2>
-    <div className="offer">
-      <select name="" id="" value='Offer'>
-        <option value="">NEW</option>
-        <option value="">Min. order above 3000</option>
-      </select>
+        <h2>Total Price: ₹{total.toFixed(2)}</h2>
+        <div className="offer">
+          <select
+            name="offer"
+            id="offer"
+            value={offer}
+            onChange={(e) => handleOfferChange(e.target.value)}
+          >
+            <option value="">Select Offer</option>
+            <option value="NEW">NEW User 10% dicount</option>
+            <option value="Min. order above 3000">Min. order above 3000 give 20% discount</option>
+          </select>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
     </>
   );
 };
