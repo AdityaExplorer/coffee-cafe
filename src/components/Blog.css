@@ -117,7 +117,7 @@
     .blog_section_details{
       height: 45vh;
       overflow: scroll;
-      border: 1px solid black;
+      /* border: 1px solid black; */
     }
   
     .blog-description {
@@ -149,7 +149,7 @@
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    overflow: scroll;
+    /* overflow: scroll; */
     font-weight: 500;
   }
   /* .alert .txt{

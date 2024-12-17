@@ -23,10 +23,10 @@ const Navbar = () => {
         </div>
         <div className="container">
           <a className="navbar-brand d-md-none" href="#">
-            {/* <svg className="bi" width="24" height="24"><use xlinkHref="#aperture"/></svg> */}
-            <div className="logo">
+            <svg className="bi" width="24" height="24"><use xlinkHref="#aperture"/></svg>
+            {/* <div className="logo">
               <img src={logo_img} alt="" />
-            </div>
+            </div> */}
           </a>
           <button
             className="navbar-toggler"
@@ -57,15 +57,15 @@ const Navbar = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="offcanvas-body">
+            <div className="offcanvas-body my-5">
               <ul className="navbar-nav flex-grow-1 justify-content-between">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a className="nav-link" href="#">
                     <svg className="bi" width="24" height="24">
                       <use xlinkHref="#aperture" />
                     </svg>
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <Link className="nav-link " to="/">
                     Home
