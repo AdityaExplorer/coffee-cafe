@@ -69,3 +69,8 @@
   width: 100%; 
 }
 
+@media(max-width:786px){
+  .Contact_Us{
+    margin-left: -10px;
+  }
+}

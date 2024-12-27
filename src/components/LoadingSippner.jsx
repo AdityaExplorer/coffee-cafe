@@ -1,3 +1,5 @@
+import './LoadingSippner.css';
+
 const LoadingSpinner=()=>{
     return(
         <div className="d-flex justify-content-center loader">
@@ -7,5 +9,4 @@ const LoadingSpinner=()=>{
         </div>
     )
 }
-
 export default LoadingSpinner;

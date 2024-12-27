@@ -96,7 +96,7 @@ const Navbar = () => {
                     Review
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item ">
                   <a className="nav-link" href="#">
                     <button onClick={openPopup} className="Contact_Us">
                       Contact Us
