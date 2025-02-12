@@ -1,9 +1,14 @@
 import './Customers.css';
-
+import {motion} from "framer-motion";
 const Customers = ({ dataCustomers }) => {
     return (
         <>
-      <div className="customer">
+      <motion.div 
+      initial={{opacity:1,x:200}}
+      transition={{duration:1}}
+      whileInView={{opacity:1,x:0}}
+      viewport={{once:true}}
+      className="customer">
         <h1>Our Customers</h1>
         {dataCustomers.map((item) => (
           <div className="card" style={{ width: "18rem" }} key={item.id}>
@@ -15,7 +20,7 @@ const Customers = ({ dataCustomers }) => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
       </>
     );
   };

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useCart } from '../store/CartContext';
 import { useNavigate } from 'react-router-dom';
+import {motion} from "framer-motion";
 
 const Products = () => {
   const { add_to_cart } = useCart();
@@ -15,12 +16,17 @@ const Products = () => {
     navigate('/cart');
   };
   return (
-    <div className="product-products">
-      <h1 style={{ textAlign: "center", letterSpacing: "5px" }}>Products</h1>
+    <motion.div 
+    initial={{opacity:0,x:100}}
+    transition={{duration:1}}
+    whileInView={{opacity:1,x:0}}
+    viewport={{once:true}}
+    className="product-products">
+      <h2 style={{ textAlign: "center", letterSpacing: "5px" }} className="text-5xl mb-4">Products</h2>
       <div className="row">
         {productData.map((product) => (
           <div className="col-md-4" key={product.id}>
-            <div className="card text-center mb-3" style={{ width: "20rem" }}>
+            <div className="card text-center mb-3 flex justify-center items-center" style={{ width: "20rem" }}>
               <img
                 src={product.image}
                 className="card-img-top"
@@ -33,17 +39,17 @@ const Products = () => {
                 </p>
                 <p className="price">₹{product.price}</p>
                 <button
-                  className="cart-btn"
+                  className="cart-btn flex justify-center items-center ml-[40px] "
                   onClick={() => handleAddToCart(product)}
                 >
-                  <FaCartPlus />
+                  <FaCartPlus className="text-xl"/>
                 </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

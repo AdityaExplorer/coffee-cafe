@@ -2,7 +2,7 @@ import './Equipments.css';
 import { FaCartPlus } from "react-icons/fa";
 import { useCart } from '../store/CartContext';
 import { useNavigate } from 'react-router-dom';
-
+import {motion} from "framer-motion";
 
 const Equipments = () => {
 
@@ -16,7 +16,12 @@ const Equipments = () => {
   return (
     
     <>
- <section className="intro-section">
+ <motion.section 
+ initial={{opacity:0,x:-200}}
+ transition={{duration:1}}
+ whileInView={{opacity:1,x:0}}
+ viewport={{once:true}}
+ className="intro-section">
       <div className="intro-content">
         <h2>Welcome to the World of Premium Coffee Equipment</h2>
         <p>
@@ -24,26 +29,31 @@ const Equipments = () => {
           From coffee makers to espresso machines, we have everything you need to create barista-quality coffee at home.
         </p>
       </div>
-    </section>
+    </motion.section>
 
 
 
     
-    <div className="equip-products">
+    <motion.div 
+    initial={{opacity:0,x:100}}
+    transition={{duration:1}}
+    whileInView={{opacity:1,x:0}}
+    viewport={{once:true}}
+    className="equip-products">
       <div className="equip-content">
 {          equipData.map((brew, index) => (
             <div key={index} className="product-card">
               <img src={brew.image} alt={brew.title} />
               <h2 className="product_title">{brew.title}</h2>
               <h2 className="product_Price">₹{brew.price}</h2>
-              <button className="cart-btn">
-              <FaCartPlus onClick={()=>handleAddToCart(brew)} />
+              <button className="cart-btn flex justify-center items-center ml-7 ">
+              <FaCartPlus onClick={()=>handleAddToCart(brew)} className='text-white text-xl'/>
               </button>
             </div>
           ))
         }
       </div>
-    </div>
+    </motion.div>
     </>
 );
 };

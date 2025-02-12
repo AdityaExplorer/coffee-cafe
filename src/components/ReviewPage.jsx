@@ -1,12 +1,16 @@
 import './ReviewPage.css';
-
+import {motion} from "framer-motion"
 
 const ReviewPage=()=>{
     return (
         <>
-        <div className="container my-5">
+        <motion.div
+        initial={{opacity:0,x:100}}
+        transition={{duration:1}}
+        whileInView={{opacity:1,x:0}}
+        viewport={{once:true}} className="container my-5">
            <div className="inside-data">
-                <h1 className="leads">Share Your Review</h1>
+                <h2 className="leads text-4xl">Share Your Review</h2>
             </div> 
             <div className="form-date">
             <div className="form-inside">
@@ -19,7 +23,7 @@ const ReviewPage=()=>{
                 </div>
             </div>
         </div>
-        </div>
+        </motion.div>
         
 
         </>

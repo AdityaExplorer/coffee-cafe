@@ -2,12 +2,13 @@ import "./Navbar.css";
 import logo_img from "../images/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Popup from "./Popup.jsx";
 import { CgDarkMode } from "react-icons/cg";
 
 const Navbar = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
@@ -35,6 +36,7 @@ const Navbar = () => {
             data-bs-target="#offcanvas"
             aria-controls="offcanvas"
             aria-label="Toggle navigation"
+            onClick={()=>setMenu(true)}  
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -46,7 +48,7 @@ const Navbar = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasLabel">
-                <div className="logo">
+                <div className="logo ">
                   <img src={logo_img} alt="" />
                 </div>
               </h5>
@@ -102,6 +104,7 @@ const Navbar = () => {
                       Contact Us
                     </button>
                     {/* Render the Popup component */}
+                    {/* Contact Pop Starts Here */}
                     <Popup isOpen={isPopupOpen} onClose={closePopup}>
                       <h2>Contact Us</h2>
                       <p className="pop_content">BREWLINE</p>

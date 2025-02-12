@@ -33,7 +33,7 @@
         margin-left: 1rem;
     }
     #offcanvas {
-      width: 50%; 
+      width: 40%; 
     }
 }
 
@@ -71,6 +71,6 @@
 
 @media(max-width:786px){
   .Contact_Us{
-    margin-left: -10px;
+    margin-left: 1px;
   }
 }
