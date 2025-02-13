@@ -5,10 +5,11 @@ import Navbar from "./components/Navbar";
 import Customers from "./components/Customers";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
-import Products from "./components/Products";
+
 import {Outlet, useLocation} from 'react-router-dom';
 import { useEffect, useState } from "react";
 import LoadingSpinner from "./components/LoadingSippner";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const location = useLocation(); 
@@ -29,6 +30,7 @@ function App() {
   
   return (
     <>
+    <ToastContainer/>
       {loader ? (
         <LoadingSpinner></LoadingSpinner>
       ) : (
